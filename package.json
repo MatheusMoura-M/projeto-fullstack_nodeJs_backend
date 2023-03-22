@@ -1,0 +1,40 @@
+{
+  "name": "projeto-fullstack_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:MatheusMoura-M/projeto-fullstack_backend.git",
+  "author": "Matheus M. <matheus150101miranda@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
+    "test": "cross-env NODE_ENV=test jest --verbose",
+    "typeorm": "typeorm-ts-node-commonjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.10.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.12",
+    "uuid": "^9.0.0",
+    "yup": "0.32.11"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.0",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/node": "^18.15.5",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.5.0",
+    "sqlite3": "^5.1.6",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.2"
+  }
+}
