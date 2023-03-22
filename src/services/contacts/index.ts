@@ -1,3 +1,11 @@
-// import { createClientService } from "./client.service";
+import createContactService from "./createContact.service";
+import updateContactService from "./updateContact.service";
+import getAllContactsService from "./getAllContacts.service";
+import deleteContactService from "./deleteContact.service";
 
-// export { createClientService };
+export {
+  createContactService,
+  getAllContactsService,
+  updateContactService,
+  deleteContactService,
+};

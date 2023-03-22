@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  DeleteDateColumn,
 } from "typeorm";
 
 import { Contacts } from "./index";
@@ -34,6 +35,9 @@ class Client {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 
   @OneToMany(() => Contacts, (contacts) => contacts.client)
   contacts: Contacts[];

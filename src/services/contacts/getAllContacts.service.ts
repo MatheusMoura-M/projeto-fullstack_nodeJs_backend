@@ -1,15 +1,21 @@
-import { iCreateClientResponse } from "../../interfaces";
-import { clientArrayReturnSchema } from "../../schemas/client";
-import { clientRepo } from "../../utils/repositories";
+import { iCreateContactResponse } from "../../interfaces";
+import { contactArrayReturnSchema } from "../../schemas/contacts";
+import { contactRepo } from "../../utils/repositories";
 
-const getAllContactsService = async (): Promise<iCreateClientResponse[]> => {
-  const clientsWithContacts = await clientRepo
-    .createQueryBuilder("client")
-    .leftJoinAndSelect("client.contacts", "contacts")
-    .getMany();
+const getAllContactsService = async (
+  clientId: string
+): Promise<iCreateContactResponse[]> => {
+  const clientWithContacts = await contactRepo.find({
+    relations: {
+      client: true,
+    },
+    where: {
+      client: { id: clientId },
+    },
+  });
 
-  const clientWithoutPassword = await clientArrayReturnSchema.validate(
-    clientsWithContacts,
+  const clientWithoutPassword = await contactArrayReturnSchema.validate(
+    clientWithContacts,
     {
       stripUnknown: true,
     }

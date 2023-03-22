@@ -1,3 +1,4 @@
+// CREATE
 interface iCreateClientRequest {
   name: string;
   email: string;
@@ -17,6 +18,17 @@ interface iArrayClientWithContacts extends iCreateClientResponse {
   contacts: [];
 }
 
+// UPDATE
+interface iUpdateClientRequest {
+  name?: string;
+  email?: string;
+  password?: string;
+  phone?: number;
+}
+
+interface iUpdateClientResponse extends iCreateClientResponse {}
+
+// LOGIN
 interface ILoginClient {
   email: string;
   password: string;
@@ -28,4 +40,6 @@ export {
   iCreateClientResponse,
   ILoginClient,
   iArrayClientWithContacts,
+  iUpdateClientRequest,
+  iUpdateClientResponse,
 };

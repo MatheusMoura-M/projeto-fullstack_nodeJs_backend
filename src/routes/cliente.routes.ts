@@ -3,17 +3,33 @@ import {
   createClientController,
   getAllClientsController,
 } from "../controllers/clients";
-import ensureEmailExistsMiddleware from "../middlewares/ensureEmailExists.middleware";
-import { validateSchemaMiddleware } from "../middlewares/validateSchema.middleware";
-import { createClientRequestSchema } from "../schemas/client";
+import deleteClientController from "../controllers/clients/deleteContact.controller";
+import updateClientController from "../controllers/clients/updateClient.controller";
+import {
+  ensureEmailClientExistsMiddleware,
+  validateSchemaMiddleware,
+} from "../middlewares";
+import {
+  createClientRequestSchema,
+  updateClientRequestSchema,
+} from "../schemas/client";
 
 export const clientRouter = Router();
 
 clientRouter.post(
   "",
   validateSchemaMiddleware(createClientRequestSchema),
-  ensureEmailExistsMiddleware,
+  ensureEmailClientExistsMiddleware,
   createClientController
 );
 
+clientRouter.patch(
+  "/:id",
+  validateSchemaMiddleware(updateClientRequestSchema),
+  ensureEmailClientExistsMiddleware,
+  updateClientController
+);
+
 clientRouter.get("", getAllClientsController);
+
+clientRouter.delete("/:id", deleteClientController);

@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { AnySchema } from "yup";
 import { AppError } from "../errors";
 
-export const validateSchemaMiddleware =
+const validateSchemaMiddleware =
   (schema: AnySchema) =>
   async (req: Request, resp: Response, next: NextFunction) => {
     try {
@@ -17,3 +17,5 @@ export const validateSchemaMiddleware =
       throw new AppError(error.errors, 401);
     }
   };
+
+export default validateSchemaMiddleware;
