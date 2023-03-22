@@ -19,7 +19,7 @@ const errorHandler = async (
   if (err instanceof AppError) {
     return resp.status(err.statusCode).json({ message: err.message });
   }
-  console.log("AAA", err);
+  console.log("EEEEEE", err);
   return resp.status(500).json({ message: "Internal Server Error" });
 };
 

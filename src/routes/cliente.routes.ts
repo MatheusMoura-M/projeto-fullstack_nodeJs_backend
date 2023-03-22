@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { createClientController } from "../controllers";
+import {
+  createClientController,
+  getAllClientsController,
+} from "../controllers/clients";
 import ensureEmailExistsMiddleware from "../middlewares/ensureEmailExists.middleware";
 import { validateSchemaMiddleware } from "../middlewares/validateSchema.middleware";
 import { createClientRequestSchema } from "../schemas/client";
@@ -12,3 +15,5 @@ clientRouter.post(
   ensureEmailExistsMiddleware,
   createClientController
 );
+
+clientRouter.get("", getAllClientsController);

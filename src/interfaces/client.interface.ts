@@ -13,6 +13,10 @@ interface iCreateClientResponse extends iOmitClientPassword {
   updatedAt: Date;
 }
 
+interface iArrayClientWithContacts extends iCreateClientResponse {
+  contacts: [];
+}
+
 interface ILoginClient {
   email: string;
   password: string;
@@ -23,4 +27,5 @@ export {
   iOmitClientPassword,
   iCreateClientResponse,
   ILoginClient,
+  iArrayClientWithContacts,
 };
