@@ -9,18 +9,19 @@ import {
   ensureEmailContactExistsMiddleware,
   validateSchemaMiddleware,
 } from "../middlewares";
+import ensureAuthMiddleware from "../middlewares/ensureAuth.middleware";
 import { updateContactRequestSchema } from "../schemas/contacts";
 
-export const contactByClientRouter = Router();
 export const contactRouter = Router();
 
-contactByClientRouter.post(
-  "/:id/contacts",
+contactRouter.post(
+  "",
+  ensureAuthMiddleware,
   ensureEmailContactExistsMiddleware,
   createContactController
 );
 
-contactByClientRouter.get("/:id/contacts", getAllContactsController);
+contactRouter.get("", ensureAuthMiddleware, getAllContactsController);
 
 contactRouter.patch(
   "/:id",

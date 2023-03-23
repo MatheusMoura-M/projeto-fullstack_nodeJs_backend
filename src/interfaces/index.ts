@@ -16,6 +16,11 @@ import {
   iUpdateContactResponse,
 } from "./contact.interface";
 
+import {
+  iCreateSessionRequest,
+  iCreateSessionResponse,
+} from "./sessions.interface";
+
 export {
   iCreateClientRequest,
   iCreateClientResponse,
@@ -29,4 +34,6 @@ export {
   iContactsByClientResponse,
   iUpdateContactRequest,
   iUpdateContactResponse,
+  iCreateSessionRequest,
+  iCreateSessionResponse,
 };

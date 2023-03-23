@@ -1,4 +1,5 @@
 import { clientRouter } from "./cliente.routes";
-import { contactRouter, contactByClientRouter } from "./contacts.routes";
+import { contactRouter } from "./contacts.routes";
+import { sessionRouter } from "./session.routes";
 
-export { clientRouter, contactRouter, contactByClientRouter };
+export { clientRouter, contactRouter, sessionRouter };
