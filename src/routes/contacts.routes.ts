@@ -16,12 +16,13 @@ export const contactRouter = Router();
 
 contactRouter.post(
   "",
-  ensureAuthMiddleware,
+  // ensureAuthMiddleware,
   ensureEmailContactExistsMiddleware,
   createContactController
 );
 
-contactRouter.get("", ensureAuthMiddleware, getAllContactsController);
+contactRouter.get("", getAllContactsController);
+// contactRouter.get("", ensureAuthMiddleware, getAllContactsController);
 
 contactRouter.patch(
   "/:id",

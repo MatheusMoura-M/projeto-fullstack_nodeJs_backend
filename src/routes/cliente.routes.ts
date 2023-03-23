@@ -31,6 +31,7 @@ clientRouter.patch(
   updateClientController
 );
 
-clientRouter.get("", ensureAuthMiddleware, getAllClientsController);
+// clientRouter.get("", ensureAuthMiddleware, getAllClientsController);
+clientRouter.get("", getAllClientsController);
 
 clientRouter.delete("/:id", deleteClientController);
