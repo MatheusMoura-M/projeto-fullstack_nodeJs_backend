@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import createContactService from "../../services/contacts/createContact.service";
 
 const createContactController = async (req: Request, resp: Response) => {
-  const cliendId = req.client.id;
-  const data = await createContactService(req.body, cliendId);
+  const clientId = req.client.id;
+  const data = await createContactService(req.body, clientId);
 
   return resp.status(201).json(data);
 };

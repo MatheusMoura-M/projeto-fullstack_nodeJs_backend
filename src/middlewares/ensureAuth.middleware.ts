@@ -19,6 +19,7 @@ const ensureAuthMiddleware = async (
       if (error) {
         return res.status(401).json({ message: error.message });
       }
+      console.log("DDEEEEECOOODED", decoded);
       req.client = {
         id: decoded.sub as string,
       };

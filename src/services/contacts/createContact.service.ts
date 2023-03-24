@@ -8,11 +8,11 @@ import { clientRepo, contactRepo } from "../../utils/repositories";
 
 const createContactService = async (
   payload: iCreateContactRequest,
-  cliendId: string
+  clientId: string
 ): Promise<iCreateContactResponse> => {
   const clientFound = await clientRepo.findOne({
     where: {
-      id: cliendId,
+      id: clientId,
     },
   });
 
@@ -22,7 +22,7 @@ const createContactService = async (
 
   const contactData = {
     ...payload,
-    client: { id: cliendId },
+    client: { id: clientId },
   };
 
   const createContact = contactRepo.create(contactData);

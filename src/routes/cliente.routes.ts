@@ -9,7 +9,6 @@ import {
   ensureEmailClientExistsMiddleware,
   validateSchemaMiddleware,
 } from "../middlewares";
-import ensureAuthMiddleware from "../middlewares/ensureAuth.middleware";
 import {
   createClientRequestSchema,
   updateClientRequestSchema,
@@ -31,7 +30,6 @@ clientRouter.patch(
   updateClientController
 );
 
-// clientRouter.get("", ensureAuthMiddleware, getAllClientsController);
 clientRouter.get("", getAllClientsController);
 
 clientRouter.delete("/:id", deleteClientController);

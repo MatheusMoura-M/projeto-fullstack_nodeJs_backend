@@ -5,6 +5,8 @@ import { contactRepo } from "../../utils/repositories";
 const getAllContactsService = async (
   clientId: string
 ): Promise<iCreateContactResponse[]> => {
+  console.log("BBB", clientId);
+
   const clientWithContacts = await contactRepo.find({
     relations: {
       client: true,
@@ -14,14 +16,14 @@ const getAllContactsService = async (
     },
   });
 
-  const clientWithoutPassword = await contactArrayReturnSchema.validate(
+  const clientValidated = await contactArrayReturnSchema.validate(
     clientWithContacts,
     {
       stripUnknown: true,
     }
   );
 
-  return clientWithoutPassword;
+  return clientValidated;
 };
 
 export default getAllContactsService;
