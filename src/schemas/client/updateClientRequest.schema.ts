@@ -7,7 +7,7 @@ const updateClientRequestSchema: SchemaOf<iUpdateClientRequest> = yup
   .shape({
     name: yup.string().notRequired(),
     email: yup.string().email().notRequired(),
-    phone: yup.number().notRequired(),
+    phone: yup.string().notRequired(),
     password: yup.string().notRequired(),
   });
 

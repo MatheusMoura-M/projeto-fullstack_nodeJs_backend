@@ -7,7 +7,7 @@ const createContactRequestSchema: SchemaOf<iCreateContactRequest> = yup
   .shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
-    phone: yup.number().required(),
+    phone: yup.string().required(),
     password: yup.string().required(),
   });
 

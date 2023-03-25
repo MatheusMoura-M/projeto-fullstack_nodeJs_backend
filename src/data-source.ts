@@ -3,7 +3,7 @@ import "reflect-metadata";
 import path from "path";
 import "dotenv/config";
 import { Client, Contacts } from "./entities/index";
-import { initials1679525967158 } from "./migrations/1679525967158-initials";
+import { initials1679766862033 } from "./migrations/1679766862033-initials";
 
 const AppDataSource =
   process.env.NODE_ENV === "test"
@@ -23,7 +23,7 @@ const AppDataSource =
         port: parseInt(process.env.PGPORT),
         logging: true,
         entities: [Client, Contacts],
-        migrations: [initials1679525967158],
+        migrations: [initials1679766862033],
       });
 
 export default AppDataSource;

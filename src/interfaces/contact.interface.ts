@@ -2,7 +2,7 @@
 interface iCreateContactRequest {
   name: string;
   email: string;
-  phone: number;
+  phone: string;
 }
 
 interface iCreateContactResponse extends iCreateContactRequest {
@@ -15,7 +15,7 @@ interface iCreateContactResponse extends iCreateContactRequest {
 interface iUpdateContactRequest {
   name?: string;
   email?: string;
-  phone?: number;
+  phone?: string;
 }
 
 // GET
@@ -29,7 +29,7 @@ interface iContactsByClientResponse extends iCreateContactRequest {
   id: string;
   name: string;
   email: string;
-  phone: number;
+  phone: string;
   createdAt: Date;
   updatedAt: Date;
   client: iListClientOfTheContact;

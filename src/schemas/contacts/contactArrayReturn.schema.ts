@@ -10,7 +10,7 @@ const contactArrayReturnSchema: SchemaOf<iContactsByClientResponse[]> =
       client: yup.object().shape({
         id: yup.string().required(),
       }),
-      phone: yup.number().required(),
+      phone: yup.string().required(),
       email: yup.string().email().required(),
       name: yup.string().required(),
       id: yup.string().required(),

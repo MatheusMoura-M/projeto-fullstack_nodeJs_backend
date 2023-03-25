@@ -7,7 +7,7 @@ const clientArrayReturnSchema: SchemaOf<iArrayClientWithContacts[]> = yup.array(
     contacts: yup.array(),
     updatedAt: yup.date().required(),
     createdAt: yup.date().required(),
-    phone: yup.number().required(),
+    phone: yup.string().required(),
     email: yup.string().email().required(),
     name: yup.string().required(),
     id: yup.string().required(),

@@ -5,8 +5,6 @@ import { contactRepo } from "../../utils/repositories";
 const getAllContactsService = async (
   clientId: string
 ): Promise<iCreateContactResponse[]> => {
-  console.log("BBB", clientId);
-
   const clientWithContacts = await contactRepo.find({
     relations: {
       client: true,

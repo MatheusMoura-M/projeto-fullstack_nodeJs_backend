@@ -3,7 +3,7 @@ interface iCreateClientRequest {
   name: string;
   email: string;
   password: string;
-  phone: number;
+  phone: string;
 }
 
 interface iOmitClientPassword extends Omit<iCreateClientRequest, "password"> {}
@@ -23,7 +23,7 @@ interface iUpdateClientRequest {
   name?: string;
   email?: string;
   password?: string;
-  phone?: number;
+  phone?: string;
 }
 
 interface iUpdateClientResponse extends iCreateClientResponse {}

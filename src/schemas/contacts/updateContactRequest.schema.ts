@@ -7,7 +7,7 @@ const updateContactRequestSchema: SchemaOf<iUpdateContactRequest> = yup
   .shape({
     name: yup.string().notRequired(),
     email: yup.string().email().notRequired(),
-    phone: yup.number().notRequired(),
+    phone: yup.string().notRequired(),
   });
 
 export default updateContactRequestSchema;

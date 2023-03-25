@@ -6,6 +6,16 @@ const updateClientService = async (
   payload: iUpdateClientRequest,
   clientId: string
 ): Promise<iUpdateClientResponse> => {
+  if (payload.name === "") {
+    delete payload.name;
+  }
+  if (payload.email === "") {
+    delete payload.email;
+  }
+  if (payload.phone === "") {
+    delete payload.phone;
+  }
+
   await clientRepo
     .createQueryBuilder("client")
     .update()

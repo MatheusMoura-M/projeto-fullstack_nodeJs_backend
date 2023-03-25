@@ -22,7 +22,7 @@ class Contacts {
   email: string;
 
   @Column()
-  phone: number;
+  phone: string;
 
   @CreateDateColumn()
   createdAt: Date;

@@ -9,6 +9,16 @@ const updateContactService = async (
   payload: iUpdateContactRequest,
   contactId: string
 ): Promise<iUpdateContactResponse> => {
+  if (payload.name === "") {
+    delete payload.name;
+  }
+  if (payload.email === "") {
+    delete payload.email;
+  }
+  if (payload.phone === "") {
+    delete payload.phone;
+  }
+
   await contactRepo
     .createQueryBuilder("contacts")
     .update()

@@ -28,7 +28,7 @@ class Client {
   password: string;
 
   @Column()
-  phone: number;
+  phone: string;
 
   @CreateDateColumn()
   createdAt: Date;
