@@ -2,7 +2,6 @@ import { Router } from "express";
 import {
   createContactController,
   deleteContactController,
-  getAllContactsController,
   updateContactController,
 } from "../controllers/contacts";
 import {
@@ -20,8 +19,6 @@ contactRouter.post(
   ensureEmailContactExistsMiddleware,
   createContactController
 );
-
-contactRouter.get("", ensureAuthMiddleware, getAllContactsController);
 
 contactRouter.patch(
   "/:id",

@@ -6,6 +6,7 @@ import {
 } from "../controllers/clients";
 import deleteClientController from "../controllers/clients/deleteContact.controller";
 import updateClientController from "../controllers/clients/updateClient.controller";
+import { getAllContactsController } from "../controllers/contacts";
 import {
   ensureEmailClientExistsMiddleware,
   validateSchemaMiddleware,
@@ -33,7 +34,8 @@ clientRouter.patch(
   updateClientController
 );
 
+clientRouter.get("/contacts", ensureAuthMiddleware, getAllContactsController);
 clientsRouter.get("", getAllClientsController);
-clientRouter.get("", ensureAuthMiddleware, getClientController);
+clientRouter.get("/:id", getClientController);
 
 clientRouter.delete("/:id", deleteClientController);
