@@ -1,8 +1,9 @@
+// CREATE
 interface iCreateClientRequest {
   name: string;
   email: string;
   password: string;
-  phone: number;
+  phone: string;
 }
 
 interface iOmitClientPassword extends Omit<iCreateClientRequest, "password"> {}
@@ -13,6 +14,21 @@ interface iCreateClientResponse extends iOmitClientPassword {
   updatedAt: Date;
 }
 
+interface iArrayClientWithContacts extends iCreateClientResponse {
+  contacts: [];
+}
+
+// UPDATE
+interface iUpdateClientRequest {
+  name?: string;
+  email?: string;
+  password?: string;
+  phone?: string;
+}
+
+interface iUpdateClientResponse extends iCreateClientResponse {}
+
+// LOGIN
 interface ILoginClient {
   email: string;
   password: string;
@@ -23,4 +39,7 @@ export {
   iOmitClientPassword,
   iCreateClientResponse,
   ILoginClient,
+  iArrayClientWithContacts,
+  iUpdateClientRequest,
+  iUpdateClientResponse,
 };

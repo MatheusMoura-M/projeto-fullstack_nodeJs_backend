@@ -5,6 +5,8 @@ import {
   ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
+  DeleteDateColumn,
 } from "typeorm";
 import { Client } from "./index";
 
@@ -20,7 +22,7 @@ class Contacts {
   email: string;
 
   @Column()
-  phone: number;
+  phone: string;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -28,7 +30,11 @@ class Contacts {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToOne(() => Client, (client) => client.contacts)
+  @DeleteDateColumn()
+  deletedAt: Date;
+
+  @ManyToOne(() => Client, (client) => client.contacts, { eager: true })
+  @JoinColumn()
   client: Client;
 }
 

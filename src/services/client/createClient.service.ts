@@ -1,8 +1,8 @@
-import { iCreateClientRequest, iCreateClientResponse } from "../interfaces";
-import { createClientReturnSchema } from "../schemas/client";
-import { clientRepo } from "../utils/repositories";
+import { iCreateClientRequest, iCreateClientResponse } from "../../interfaces";
+import { createClientReturnSchema } from "../../schemas/client";
+import { clientRepo } from "../../utils/repositories";
 
-export const createClientService = async (
+const createClientService = async (
   payload: iCreateClientRequest
 ): Promise<iCreateClientResponse> => {
   const createClient = clientRepo.create(payload);
@@ -17,3 +17,5 @@ export const createClientService = async (
 
   return clientWithoutPassword;
 };
+
+export default createClientService;
