@@ -27,4 +27,4 @@ contactRouter.patch(
   updateContactController
 );
 
-contactRouter.delete("/:id", deleteContactController);
+contactRouter.delete("/:id", ensureAuthMiddleware, deleteContactController);
